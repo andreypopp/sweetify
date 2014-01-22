@@ -1,4 +1,4 @@
-# sweeten
+# sweetify
 
 Browserify transform for using Sweet.js macros.
 
@@ -6,11 +6,11 @@ Browserify transform for using Sweet.js macros.
 
 Install via npm:
 
-    % npm install sweeten
+    % npm install sweetify
 
 and then use with browserify:
 
-    % browserify -t sweeten ./mycode.sjs
+    % browserify -t sweetify ./mycode.sjs
 
 Sweeten transform kicks in only for files with `.sjs` extension.
 

@@ -1,5 +1,5 @@
 {
-  "name": "sweeten",
+  "name": "sweetify",
   "version": "0.1.1",
   "description": "Browserify transform to use Sweet.js macros",
   "main": "index.js",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/andreypopp/sweeten"
+    "url": "git://github.com/andreypopp/sweetify"
   },
   "keywords": [
     "browserify",
@@ -35,7 +35,7 @@
   "author": "Andrey Popp <8mayday@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andreypopp/sweeten/issues"
+    "url": "https://github.com/andreypopp/sweetify/issues"
   },
-  "homepage": "https://github.com/andreypopp/sweeten"
+  "homepage": "https://github.com/andreypopp/sweetify"
 }
