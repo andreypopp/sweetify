@@ -9,7 +9,9 @@ var resolve   = require('browser-resolve');
 
 var isSJS = /.+\.sjs$/;
 
-var eliminateIncludeMacros = sweet.loadNodeModule(__filename, './import-macros.sjs');
+var eliminateIncludeMacros = sweet.loadNodeModule(
+      process.cwd(),
+      require.resolve('./import-macros.sjs'));
 
 function extractMacroIncludes(src) {
   var tokens = sweet.expand(src);
