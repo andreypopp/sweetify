@@ -1,6 +1,6 @@
 {
   "name": "sweetify",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Browserify transform to use Sweet.js macros",
   "main": "index.js",
   "dependencies": {
