@@ -1,0 +1,41 @@
+{
+  "name": "sweeten",
+  "version": "0.0.0",
+  "description": "Browserify transform to use Sweet.js macros",
+  "main": "index.js",
+  "dependencies": {
+    "browser-resolve": "~1.2.2",
+    "sweet.js": "~0.4.1",
+    "through": "~2.3.4",
+    "map-async": "~0.1.1",
+    "convert-source-map": "~0.3.3"
+  },
+  "devDependencies": {
+    "browserify": "~3.23.1",
+    "semver": "~2.2.1",
+    "mocha": "~1.17.0",
+    "jshint": "~2.4.2",
+    "esprima": "~1.0.4"
+  },
+  "scripts": {
+    "test": "mocha -R spec specs/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andreypopp/sweeten"
+  },
+  "keywords": [
+    "browserify",
+    "transform",
+    "sweet.js",
+    "macro",
+    "macros",
+    "browserify-transform"
+  ],
+  "author": "Andrey Popp <8mayday@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreypopp/sweeten/issues"
+  },
+  "homepage": "https://github.com/andreypopp/sweeten"
+}
