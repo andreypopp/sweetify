@@ -75,9 +75,11 @@ function resolveAndLoadModules(ids, opts, cb) {
   });
 }
 
-module.exports = function(filename) {
+module.exports = function(filename, opts) {
   if (!isSJS.exec(filename))
     return through();
+    
+  opts = opts || {};
 
   var buffer = '';
 
@@ -91,6 +93,15 @@ module.exports = function(filename) {
         includes = extractMacroIncludes(buffer);
       } catch(e) {
         return stream.emit('error', e);
+      }
+
+      // load macros for all files
+      if (opts.modules && opts.modules.length) {
+        opts.modules.forEach(function(moduleName){
+          if (includes.indexOf(moduleName) === -1) {
+            includes.push(moduleName);
+          }
+        });
       }
 
       resolveAndLoadModules(includes, {filename: filename}, function(err, modules) {
