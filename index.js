@@ -111,12 +111,16 @@ module.exports = function(filename, opts) {
 
         modules.unshift(eliminateIncludeMacros);
 
+        var sweetOpts = {};
+        for(var k in opts) {
+          sweetOpts[k] = opts[k];
+        }
+        sweetOpts.modules = modules;
+        sweetOpts.sourceMap = true;
+        sweetOpts.filename = filename;
+
         try {
-          r = sweet.compile(buffer, {
-            modules: modules,
-            sourceMap: true,
-            filename: filename
-          });
+          r = sweet.compile(buffer, sweetOpts);
         } catch(e) {
           return stream.emit('error', e);
         }
