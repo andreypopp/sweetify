@@ -74,10 +74,10 @@ function resolveAndLoadModules(ids, opts, cb) {
 }
 
 module.exports = function(filename, opts) {
-  if (!module.exports.extensions.exec(filename))
-    return through();
-
   opts = opts || {};
+  opts.extensions = opts.extensions || /.+\.sjs$/;
+  if (!opts.extensions.exec(filename))
+    return through();
 
   var buffer = '';
 
@@ -129,5 +129,3 @@ module.exports = function(filename, opts) {
       });
     });
 }
-
-module.exports.extensions = /.+\.sjs$/;
