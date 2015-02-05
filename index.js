@@ -7,8 +7,6 @@ var through   = require('through');
 var sweet     = require('sweet.js');
 var resolve   = require('browser-resolve');
 
-var isSJS = /.+\.sjs$/;
-
 var eliminateIncludeMacros = sweet.loadNodeModule(
       process.cwd(),
       require.resolve('./import-macros.sjs'));
@@ -76,10 +74,10 @@ function resolveAndLoadModules(ids, opts, cb) {
 }
 
 module.exports = function(filename, opts) {
-  if (!isSJS.exec(filename))
-    return through();
-    
   opts = opts || {};
+  opts.extensions = opts.extensions || /.+\.sjs$/;
+  if (!opts.extensions.exec(filename))
+    return through();
 
   var buffer = '';
 
